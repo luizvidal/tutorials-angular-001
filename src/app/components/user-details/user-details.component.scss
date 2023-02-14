@@ -1,0 +1,25 @@
+table {
+  margin-top: 1rem;
+}
+
+table,
+td,
+tr,
+th {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+td,
+th {
+  padding: 1rem;
+}
+
+table {
+  background-color: bisque;
+}
+
+
+table > tbody {
+  background-color: azure;
+}

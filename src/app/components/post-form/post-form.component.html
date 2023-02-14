@@ -1,0 +1,62 @@
+<style>
+  .general-container {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 500px;
+  }
+
+  .general-container > .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .general-container > h1 {
+    text-align: center;
+  }
+</style>
+
+<div class="general-container">
+  <h1>Post Form</h1>
+  <div class="form">
+    <div>
+      <input type="text" placeholder="Post title" [(ngModel)]="post.title" />
+    </div>
+    <div>
+      <textarea
+        cols="30"
+        rows="10"
+        placeholder="Post Details"
+        [(ngModel)]="post.details"
+      ></textarea>
+    </div>
+    <div>
+      <input
+        [(ngModel)]="post.imageUrl"
+        type="text"
+        placeholder="Post Image URL"
+      />
+    </div>
+    <div>
+      <input type="text" placeholder="Post URL" [(ngModel)]="post.url" />
+    </div>
+    <div>
+      <input
+        type="checkbox"
+        id="add-background"
+        [(ngModel)]="post.background"
+      />
+      <label for="add-background">Add Background</label>
+    </div>
+  </div>
+</div>
+<div class="preview">
+  <img [src]="post.imageUrl" alt="" />
+  <h1 [style.backgroundColor]="post.background ? 'yellow' : ''">
+    {{ post.title }}
+  </h1>
+  <p>{{ post.details }}</p>
+  <a [href]="post.url" target="_blank" [style.display]="post.url ? 'block' : 'none'">More Details</a>
+</div>

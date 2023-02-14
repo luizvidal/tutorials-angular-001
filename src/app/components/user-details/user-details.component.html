@@ -1,0 +1,30 @@
+<div>
+  <h1>User Details</h1>
+  <input type="text" [(ngModel)]="model.name" placeholder="nome" /><br />
+  <input type="text" [(ngModel)]="model.email" placeholder="email" /><br />
+  <input type="text" [(ngModel)]="model.address" placeholder="address" /><br />
+  <button (click)="addUser()">Save data</button>
+</div>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.address }}</td>
+        <td><button (click)="deleteUser(i)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
